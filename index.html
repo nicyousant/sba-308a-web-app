@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicole's Chic Boutique</title>
-    <link rel="stylesheet" href="style.css"> 
-</head>
-    <img id="banner" src="storeshelves-sm.jpg">
-    <h1 id="bannerText">Nicole's Chic Boutique</h1>
-    
-    <div id="login">
-   
-        <select id="selectCategory" name="category">
-<option>Select a Category</option>
-    </select>
-    <label id="usernameLabel">Username: </label><input type="text" id="username" placeholder="john_doe"></p>
-    <label id="passwordLabel">Password: <input type="password" id="password" placeholder="pass123"></label></p>
-    <input id="submit" type="submit">
-    <a href="#"><img id="cartImg" class="cartImg" src="shopping_cart_w.svg" alt="Shopping Cart"></a>
-    </div>
- 
+    <head>
+        <meta charset="utf-8" />
+        <title>Nicole's Chic Boutique</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="stylesheet" href="styles/style.css" />
+    </head>
+    <body>
+        <img id="banner" src="images/storeshelves-sm.jpg" />
+        <h1>Nicole's Chic Boutique</h1>
+        <!-- simple login form (main.js will handle submit) -->
+        <form id="loginForm">
+            <input id="username" placeholder="username" value="mor_2314" />
+            <input
+                id="password"
+                placeholder="password"
+                type="password"
+                value="83r5^_"
+            />
+            <button type="submit">Login</button>
 
-    <div class="productShowcase" id="productShowcase">
-        
-    </div>
-    <script src="script.js" type="module"></script>
-    <script src="carts.js" type="module"></script>
-    <script src="credentials.js" type="module"></script>
-</body>
+    <button type="button" id="logoutBtn" style="display:none;">Logout</button>
+  </form>
+        </form>
+        <div id="status" style="margin-top: 8px"></div>
+        <button id="logoutBtn" style="display: none; margin-top: 8px">
+            Logout
+        </button>
+
+        <h2>Products</h2>
+
+        <label for="categoryFilter">Filter by category:</label>
+        <select id="categoryFilter"></select>
+
+        <div id="products" class="grid"></div>
+
+        <div id="cart">
+            <h3>🛒 Cart</h3>
+            <div id="cart-items"></div>
+            <div style="margin-top: 10px">
+                <button id="checkoutBtn" disabled>Checkout (POST)</button>
+                <button id="updateCartBtn" disabled style="margin-left: 8px">
+                    Update Cart (PUT)
+                </button>
+            </div>
+        </div>
+
+        <!-- entry: main module -->
+        <script type="module" src="scripts/main.js"></script>
+    </body>
 </html>
